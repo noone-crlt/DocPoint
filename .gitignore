@@ -426,3 +426,12 @@ FodyWeavers.xsd
 
 # Official VS Code C# Dev Kit Extension exclusion
 #*.lscache
+
+# Skill cho AI agent (cài bằng npx impeccable skills install), chỉ dùng trên máy
+.agents/
+.claude/
+skills-lock.json
+
+# Tài liệu .md chỉ để ở máy, trừ README
+*.md
+!README.md
