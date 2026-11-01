@@ -21,5 +21,5 @@ public sealed record SearchHit(
     public const char HighlightStart = '\u0002';
     public const char HighlightEnd = '\u0003';
 
-    public string Citation => $"{Position}, {DocumentName}";
+    public string Citation => $"{Position} — {DocumentName}";
 }

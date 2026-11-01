@@ -78,11 +78,18 @@ public sealed class FakeSearchService : ISearchService
             "Theo dõi nghỉ phép 2026",
         ]);
 
+    public async Task<IReadOnlyList<string>> SuggestAsync(string prefix, CancellationToken ct = default)
+    {
+        var all = await GetSuggestionsAsync(ct);
+        var plain = TextNormalizer.RemoveDiacritics(prefix).ToLowerInvariant();
+        return all.Where(s => TextNormalizer.RemoveDiacritics(s).ToLowerInvariant().Contains(plain)).ToList();
+    }
+
     public async Task<IReadOnlyList<SearchHit>> SearchAsync(string query, CancellationToken ct = default)
     {
         await Task.Delay(150, ct);
 
-        var words = Vietnamese.RemoveDiacritics(query).ToLowerInvariant()
+        var words = TextNormalizer.RemoveDiacritics(query).ToLowerInvariant()
             .Split(' ', StringSplitOptions.RemoveEmptyEntries)
             .Where(w => w.Length >= 3)
             .ToArray();
@@ -91,7 +98,7 @@ public sealed class FakeSearchService : ISearchService
             ? []
             : Hits.Where(h =>
               {
-                  var text = Vietnamese.RemoveDiacritics(string.Concat(h.Body)).ToLowerInvariant();
+                  var text = TextNormalizer.RemoveDiacritics(string.Concat(h.Body)).ToLowerInvariant();
                   return words.Any(text.Contains);
               }).ToList();
     }

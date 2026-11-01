@@ -42,7 +42,12 @@ public partial class MainWindowViewModel : ObservableObject
 
         _isReading = folderWatch.IsReading;
         folderWatch.StatusChanged += (_, _) =>
-            System.Windows.Application.Current.Dispatcher.Invoke(() => IsReading = _folderWatch.IsReading);
+            System.Windows.Application.Current.Dispatcher.InvokeAsync(async () =>
+            {
+                IsReading = _folderWatch.IsReading;
+                if (!IsReading)
+                    await LoadAsync();
+            });
 
         navigator.Navigated += page => ActiveSection = SectionOf(page);
     }

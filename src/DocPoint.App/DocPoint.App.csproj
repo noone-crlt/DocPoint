@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <Resource Include="Resources\Fonts\*.ttf" />
+    <Content Include="appsettings.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>

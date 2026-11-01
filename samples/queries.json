@@ -1,0 +1,47 @@
+{
+  "note": "30 câu tìm kèm đáp án đúng. label là nhãn vị trí mà F2 phải sinh ra. File mẫu sinh bằng tools/SampleGenerator.",
+  "queries": [
+    { "query": "doanh thu bán lẻ", "file": "bao-cao-quy-3.docx", "label": "Mục 2.1, Chương 2" },
+    { "query": "tuyển mới 18 người", "file": "bao-cao-quy-3.docx", "label": "Mục 1.2, Chương 1" },
+    { "query": "ty le gia han hop dong bao tri", "file": "bao-cao-quy-3.docx", "label": "Mục 2.3, Chương 2" },
+    { "query": "rủi ro tỷ giá", "file": "bao-cao-quy-3.docx", "label": "Mục 3.2, Chương 3" },
+    { "query": "mục tiêu doanh thu quý 4", "file": "bao-cao-quy-3.docx", "label": "Mục 3.1, Chương 3" },
+
+    { "query": "khoá chính", "file": "giao-trinh-co-so-du-lieu.docx", "label": "Mục 2.1, Chương 2" },
+    { "query": "dạng chuẩn ba", "file": "giao-trinh-co-so-du-lieu.docx", "label": "Mục 2.2, Chương 2" },
+    { "query": "hệ quản trị cơ sở dữ liệu", "file": "giao-trinh-co-so-du-lieu.docx", "label": "Mục 1.1.2, Chương 1" },
+    { "query": "SQLite", "file": "giao-trinh-co-so-du-lieu.docx", "label": "Mục 1.1.2, Chương 1" },
+
+    { "query": "tiền đặt cọc", "file": "hop-dong-thue-van-phong.docx", "label": "Khoản 3.2, Điều 3" },
+    { "query": "28.000.000 đồng", "file": "hop-dong-thue-van-phong.docx", "label": "Khoản 2.1, Điều 2" },
+    { "query": "diện tích 85 m2", "file": "hop-dong-thue-van-phong.docx", "label": "Khoản 1.1, Điều 1" },
+    { "query": "báo trước 60 ngày", "file": "hop-dong-thue-van-phong.docx", "label": "Khoản 3.2, Điều 3" },
+
+    { "query": "nghỉ hằng năm 12 ngày", "file": "quy-che-lam-viec.docx", "label": "Khoản 1, Điều 3" },
+    { "query": "chăm sóc con ốm", "file": "quy-che-lam-viec.docx", "label": "Điểm b, khoản 1, Điều 4" },
+    { "query": "nghi khong huong luong toi da 30 ngay", "file": "quy-che-lam-viec.docx", "label": "Khoản 2, Điều 4" },
+    { "query": "đi làm muộn", "file": "quy-che-lam-viec.docx", "label": "Khoản 2, Điều 2" },
+    { "query": "nghỉ trưa", "file": "quy-che-lam-viec.docx", "label": "Khoản 1, Điều 2" },
+
+    { "query": "Số: 125/CV-ABC", "file": "cong-van-so-125.docx", "label": "Đoạn 2" },
+    { "query": "1.250.000.000 đồng", "file": "cong-van-so-125.docx", "label": "Đoạn 6" },
+    { "query": "120 bộ máy tính", "file": "cong-van-so-125.docx", "label": "Đoạn 5" },
+
+    { "query": "doanh số bán lẻ tăng", "file": "ghi-chu-hop.txt", "label": "Mục 1" },
+    { "query": "báo giá cho trường Nguyễn Du", "file": "ghi-chu-hop.txt", "label": "Mục 3" },
+    { "query": "tuyển thêm 3 nhân viên tư vấn", "file": "ghi-chu-hop.txt", "label": "Mục 2" },
+
+    { "query": "thay thế trong vòng 7 ngày", "file": "bao-cao-an-toan-lao-dong.pdf", "label": "Mục 2.1, trang 2" },
+    { "query": "huấn luyện an toàn lao động định kỳ", "file": "bao-cao-an-toan-lao-dong.pdf", "label": "Mục 3, trang 3" },
+
+    { "query": "tạm dừng giao nhận hàng", "file": "thong-bao-di-doi-kho.pdf", "label": "Đoạn 3, trang 1" },
+    { "query": "0243 555 0199", "file": "thong-bao-di-doi-kho.pdf", "label": "Đoạn 2, trang 2" }
+  ],
+  "excel": [
+    { "query": "Nguyễn Văn A", "file": "bang-diem.xlsx", "label": "Sheet Điểm thi, dòng 42" },
+    { "query": "Phạm Thu Hà", "file": "bang-diem.xlsx", "label": "Sheet Danh sách lớp, dòng 3" }
+  ],
+  "unreadable": [
+    { "file": "tai-lieu-scan.pdf", "status": "NoText" }
+  ]
+}

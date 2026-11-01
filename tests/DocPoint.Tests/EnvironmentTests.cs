@@ -27,7 +27,7 @@ public class EnvironmentTests
     [InlineData("Điểm a khoản 2 Điều 6", "Diem a khoan 2 Dieu 6")]
     public void RemoveDiacritics_Vietnamese(string input, string expected)
     {
-        Assert.Equal(expected, DocPoint.Domain.Vietnamese.RemoveDiacritics(input));
+        Assert.Equal(expected, DocPoint.Domain.TextNormalizer.RemoveDiacritics(input));
     }
 
     private static void Exec(SqliteConnection conn, string sql)
