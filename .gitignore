@@ -435,3 +435,6 @@ skills-lock.json
 # Tài liệu .md chỉ để ở máy, trừ README
 *.md
 !README.md
+
+# Mockup HTML chỉ để tham khảo, không đưa lên git
+docpoint/

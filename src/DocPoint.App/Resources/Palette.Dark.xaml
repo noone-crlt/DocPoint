@@ -1,0 +1,38 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Bản tối, lấy đúng các giá trị của mockup. -->
+    <Color x:Key="DpActColor">#7FC8A6</Color>
+    <SolidColorBrush x:Key="DpBiaBrush" Color="#091511" />
+    <SolidColorBrush x:Key="DpBia2Brush" Color="#17291F" />
+    <SolidColorBrush x:Key="DpBiaTBrush" Color="#E3ECE7" />
+    <SolidColorBrush x:Key="DpBiaMBrush" Color="#97B0A5" />
+    <SolidColorBrush x:Key="DpGroundBrush" Color="#0E1914" />
+    <SolidColorBrush x:Key="DpPanelBrush" Color="#121F19" />
+    <SolidColorBrush x:Key="DpPaperBrush" Color="#17261F" />
+    <SolidColorBrush x:Key="DpInkBrush" Color="#E3EBE6" />
+    <SolidColorBrush x:Key="DpInk2Brush" Color="#B7C5BE" />
+    <SolidColorBrush x:Key="DpInk3Brush" Color="#94A59D" />
+    <SolidColorBrush x:Key="DpLineBrush" Color="#2A3D33" />
+    <SolidColorBrush x:Key="DpLine2Brush" Color="#20302A" />
+    <SolidColorBrush x:Key="DpActBrush" Color="#7FC8A6" />
+    <SolidColorBrush x:Key="DpActTBrush" Color="#1B3A2D" />
+    <SolidColorBrush x:Key="DpActLBrush" Color="#2F5C48" />
+    <SolidColorBrush x:Key="DpHlBrush" Color="#E8C93C" />
+    <SolidColorBrush x:Key="DpHlTBrush" Color="#4A4220" />
+    <SolidColorBrush x:Key="DpHlInkBrush" Color="#14140C" />
+    <SolidColorBrush x:Key="DpOkBrush" Color="#7FC8A6" />
+    <SolidColorBrush x:Key="DpWarnBrush" Color="#E9B65C" />
+    <SolidColorBrush x:Key="DpWarnTBrush" Color="#3A2E14" />
+    <SolidColorBrush x:Key="DpBadBrush" Color="#F08B80" />
+    <SolidColorBrush x:Key="DpBadTBrush" Color="#3E1E1B" />
+    <SolidColorBrush x:Key="DpFieldBrush" Color="#1C2E26" />
+    <SolidColorBrush x:Key="DpBarBrush" Color="#2E4238" />
+    <Color x:Key="DpShadowColor">#73000000</Color>
+
+    <!-- Ô nhập của WPF UI dùng nền field của mockup. -->
+    <SolidColorBrush x:Key="TextControlBackground" Color="#1C2E26" />
+    <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="#1C2E26" />
+    <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="#1C2E26" />
+    <SolidColorBrush x:Key="TextControlForeground" Color="#E3EBE6" />
+    <SolidColorBrush x:Key="TextControlPlaceholderForeground" Color="#94A59D" />
+</ResourceDictionary>

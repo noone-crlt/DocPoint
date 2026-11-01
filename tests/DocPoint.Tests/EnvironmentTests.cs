@@ -1,5 +1,3 @@
-using System.Globalization;
-using System.Text;
 using Microsoft.Data.Sqlite;
 
 namespace DocPoint.Tests;
@@ -29,14 +27,7 @@ public class EnvironmentTests
     [InlineData("Điểm a khoản 2 Điều 6", "Diem a khoan 2 Dieu 6")]
     public void RemoveDiacritics_Vietnamese(string input, string expected)
     {
-        var decomposed = input.Normalize(NormalizationForm.FormD);
-        var sb = new StringBuilder();
-        foreach (var c in decomposed)
-            if (CharUnicodeInfo.GetUnicodeCategory(c) != UnicodeCategory.NonSpacingMark)
-                sb.Append(c);
-        var result = sb.ToString().Normalize(NormalizationForm.FormC).Replace('đ', 'd').Replace('Đ', 'D');
-
-        Assert.Equal(expected, result);
+        Assert.Equal(expected, DocPoint.Domain.Vietnamese.RemoveDiacritics(input));
     }
 
     private static void Exec(SqliteConnection conn, string sql)

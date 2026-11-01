@@ -1,0 +1,119 @@
+<Page x:Class="DocPoint.App.Views.Pages.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+      xmlns:vm="clr-namespace:DocPoint.App.ViewModels"
+      mc:Ignorable="d"
+      d:DataContext="{d:DesignInstance vm:SettingsViewModel, IsDesignTimeCreatable=False}"
+      Title="Cài đặt">
+
+    <Page.Resources>
+        <!-- Kiểu trang Cài đặt của Windows 11: tên nhóm, các thẻ cách nhau 4px. -->
+        <Style x:Key="GroupHeader" TargetType="ui:TextBlock">
+            <Setter Property="FontTypography" Value="BodyStrong" />
+            <Setter Property="Margin" Value="0,28,0,8" />
+        </Style>
+        <Style TargetType="ui:CardControl" BasedOn="{StaticResource {x:Type ui:CardControl}}">
+            <Setter Property="Margin" Value="0,0,0,4" />
+        </Style>
+        <Style TargetType="ui:CardExpander" BasedOn="{StaticResource {x:Type ui:CardExpander}}">
+            <Setter Property="Margin" Value="0,0,0,4" />
+        </Style>
+        <Style x:Key="CardDescription" TargetType="ui:TextBlock">
+            <Setter Property="FontTypography" Value="Caption" />
+            <Setter Property="Foreground" Value="{DynamicResource TextFillColorSecondaryBrush}" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+    </Page.Resources>
+
+    <!-- Như Cài đặt của Windows: nội dung căn trái, rộng tối đa 1000. -->
+    <Grid Margin="36,24,36,36">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" MaxWidth="1000" />
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <ui:TextBlock FontTypography="Title" Text="Cài đặt" />
+    
+            <ui:TextBlock Style="{StaticResource GroupHeader}" Text="Giao diện" />
+            <ui:CardControl Icon="{ui:SymbolIcon DarkTheme24}">
+                <ui:CardControl.Header>
+                    <StackPanel>
+                        <ui:TextBlock Text="Chế độ màu" />
+                        <ui:TextBlock Style="{StaticResource CardDescription}"
+                                      Text="Chọn sáng, tối, hoặc đổi theo Windows" />
+                    </StackPanel>
+                </ui:CardControl.Header>
+                <ComboBox MinWidth="160"
+                          ItemsSource="{Binding Themes}"
+                          DisplayMemberPath="Label"
+                          SelectedValuePath="Value"
+                          SelectedValue="{Binding Theme}"
+                          AutomationProperties.Name="Chế độ màu" />
+            </ui:CardControl>
+    
+            <ui:TextBlock Style="{StaticResource GroupHeader}" Text="Đọc tài liệu" />
+            <ui:CardExpander Icon="{ui:SymbolIcon DocumentMultiple24}">
+                <ui:CardExpander.Header>
+                    <StackPanel>
+                        <ui:TextBlock Text="Loại file được đọc" />
+                        <ui:TextBlock Style="{StaticResource CardDescription}"
+                                      Text="DocPoint chỉ đọc các loại file được chọn trong thư mục theo dõi" />
+                    </StackPanel>
+                </ui:CardExpander.Header>
+                <StackPanel Margin="40,0,0,0">
+                    <CheckBox Content="PDF (.pdf)" IsChecked="{Binding Settings.ReadPdf}" />
+                    <CheckBox Content="Word (.docx)" IsChecked="{Binding Settings.ReadWord}" Margin="0,4,0,0" />
+                    <CheckBox Content="Excel (.xlsx, .xls, .csv)" IsChecked="{Binding Settings.ReadExcel}" Margin="0,4,0,0" />
+                    <CheckBox Content="Văn bản thuần (.txt, .md)" IsChecked="{Binding Settings.ReadText}" Margin="0,4,0,0" />
+                </StackPanel>
+            </ui:CardExpander>
+            <ui:CardControl Icon="{ui:SymbolIcon DocumentDismiss24}">
+                <ui:CardControl.Header>
+                    <StackPanel>
+                        <ui:TextBlock Text="Bỏ qua file lớn hơn" />
+                        <ui:TextBlock Style="{StaticResource CardDescription}"
+                                      Text="File quá lớn làm chậm việc đọc; DocPoint sẽ bỏ qua và ghi lại" />
+                    </StackPanel>
+                </ui:CardControl.Header>
+                <StackPanel Orientation="Horizontal">
+                    <ui:NumberBox Width="140"
+                                  Minimum="1" Maximum="2000" SmallChange="10" MaxDecimalPlaces="0"
+                                  Value="{Binding Settings.MaxFileSizeMb}"
+                                  AutomationProperties.Name="Giới hạn dung lượng file, tính bằng MB" />
+                    <ui:TextBlock Text="MB" Margin="8,0,0,0" VerticalAlignment="Center" />
+                </StackPanel>
+            </ui:CardControl>
+    
+            <ui:TextBlock Style="{StaticResource GroupHeader}" Text="Dữ liệu" />
+            <ui:CardControl Icon="{ui:SymbolIcon Archive24}">
+                <ui:CardControl.Header>
+                    <StackPanel>
+                        <ui:TextBlock Text="Sao lưu và khôi phục" />
+                        <ui:TextBlock Style="{StaticResource CardDescription}"
+                                      Text="Lưu ghi chú, đánh dấu và cài đặt ra một file để chuyển sang máy khác" />
+                    </StackPanel>
+                </ui:CardControl.Header>
+                <StackPanel Orientation="Horizontal">
+                    <ui:Button Content="Sao lưu…" IsEnabled="False" />
+                    <ui:Button Content="Khôi phục…" IsEnabled="False" Margin="8,0,0,0" />
+                </StackPanel>
+            </ui:CardControl>
+    
+            <ui:TextBlock Style="{StaticResource GroupHeader}" Text="Giới thiệu" />
+            <ui:CardControl Icon="{ui:SymbolIcon Info24}">
+                <ui:CardControl.Header>
+                    <StackPanel>
+                        <ui:TextBlock Text="DocPoint" />
+                        <ui:TextBlock Style="{StaticResource CardDescription}"
+                                      Text="Kết quả chỉ để tham khảo, cần đối chiếu văn bản gốc" />
+                    </StackPanel>
+                </ui:CardControl.Header>
+                <ui:TextBlock Text="{Binding Version}"
+                              Foreground="{DynamicResource TextFillColorSecondaryBrush}"
+                              Typography.NumeralAlignment="Tabular" />
+            </ui:CardControl>
+        </StackPanel>
+    </Grid>
+</Page>
